@@ -22,7 +22,26 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'ember/order-in-controllers': [
+      'error',
+      {
+        order: [
+          'spread',
+          'controller',
+          'service',
+          'query-params',
+          'inherited-property',
+          'property',
+          'single-line-function',
+          'multi-line-function',
+          'observer',
+          'actions',
+          ['method', 'empty-method'],
+        ],
+      },
+    ],
+  },
   overrides: [
     // node files
     {
